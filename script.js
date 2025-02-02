@@ -3,13 +3,21 @@ const deviceSelect = document.getElementById('device-select');
 const orientationSelect = document.getElementById('orientation-select');
 const goButton = document.getElementById('go-button');
 const deviceContainer = document.getElementById('device-container');
+const aboutUsSection = document.getElementById('about-us');
+const aboutUsNav = document.querySelector('nav ul li');
 
 const queryParams = new URLSearchParams(window.location.search);
 const defaultUrl = queryParams.get('url') || '';
 const defaultOrientation = queryParams.get('orientation') || 'portrait';
+const hideAboutUs = queryParams.get('tevroc') !== null;
 
 urlInput.value = defaultUrl;
 orientationSelect.value = defaultOrientation;
+
+if (hideAboutUs) {
+  aboutUsSection.style.display = 'none';
+  aboutUsNav.style.display = 'none';
+}
 
 goButton.addEventListener('click', () => {
   const url = urlInput.value.trim();
