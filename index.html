@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsinator Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Responsinator Clone</h1>
+    <nav>
+      <ul>
+        <li><a href="#about-us">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="device-section">
+      <h2>Test Your Website on Different Devices</h2>
+      <input type="url" id="url-input" placeholder="Enter a URL">
+      <select id="device-select">
+        <option value="iPhone 12">iPhone 12</option>
+        <option value="iPhone 12 Pro">iPhone 12 Pro</option>
+        <option value="Samsung Galaxy S21">Samsung Galaxy S21</option>
+        <option value="Samsung Galaxy S21 Ultra">Samsung Galaxy S21 Ultra</option>
+        <option value="iPad Air">iPad Air</option>
+        <option value="iPad Pro">iPad Pro</option>
+        <option value="Google Pixel 4">Google Pixel 4</option>
+        <option value="Google Pixel 4 XL">Google Pixel 4 XL</option>
+        <option value="OnePlus 8">OnePlus 8</option>
+        <option value="OnePlus 8 Pro">OnePlus 8 Pro</option>
+        <option value="Huawei P30">Huawei P30</option>
+        <option value="Huawei P30 Pro">Huawei P30 Pro</option>
+      </select>
+      <button id="go-button">Go</button>
+      <div id="device-container">
+        <!-- devices will be rendered here -->
+      </div>
+    </section>
+    <section id="about-us">
+      <h2>About Us</h2>
+      <p>We are a team of developers who created this tool to help you test your website on different devices.</p>
+      <p>Our goal is to provide a simple and easy-to-use tool that helps you ensure your website is responsive and works well on all devices.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
