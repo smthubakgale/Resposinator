@@ -20,6 +20,24 @@ goButton.addEventListener('click', () => {
   }
 });
 
+deviceSelect.addEventListener('change', () => {
+  const url = urlInput.value.trim();
+  const device = deviceSelect.value;
+  const orientation = orientationSelect.value;
+  if (url && device && orientation) {
+    renderDevice(url, device, orientation);
+  }
+});
+
+orientationSelect.addEventListener('change', () => {
+  const url = urlInput.value.trim();
+  const device = deviceSelect.value;
+  const orientation = orientationSelect.value;
+  if (url && device && orientation) {
+    renderDevice(url, device, orientation);
+  }
+});
+
 function renderDevice(url, device, orientation) {
   deviceContainer.innerHTML = '';
   const deviceElement = document.createElement('div');
