@@ -109,4 +109,84 @@ section {
   border: none;
   border-radius: 20px;
 }
-  height: 30px
+
+#about-us {
+  width: 80%;
+  text-align: center;
+}
+
+#about-us h2 {
+  margin-top: 0;
+}
+
+#about-us p {
+  margin-bottom: 20px;
+}
+
+/* Responsive design */
+
+@media (max-width: 768px) {
+  #device-section {
+    width: 90%;
+  }
+
+  #url-input {
+    width: 80%;
+  }
+
+  #device-select, #orientation-select {
+    width: 150px;
+  }
+
+  #go-button {
+    width: 80px;
+  }
+
+  #about-us {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  #device-section {
+    width: 100%;
+  }
+
+  #url-input {
+    width: 90%;
+  }
+
+  #device-select, #orientation-select {
+    width: 100px;
+  }
+
+  #go-button {
+    width: 60px;
+  }
+
+  #about-us {
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  #url-input {
+    width: 80%;
+  }
+
+  #device-select, #orientation-select {
+    width: 80px;
+  }
+
+  #go-button {
+    width: 50px;
+  }
+
+  .device {
+    margin: 5px;
+  }
+
+  .device iframe {
+    border-radius: 5px;
+  }
+}
