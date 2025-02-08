@@ -103,11 +103,17 @@ section {
   border-color: transparent transparent #fff transparent;
 }
 
+.device .frame { 
+  width: 100%;
+  height: 100%;
+  padding:20px;
+  border-radius: 15px;
+}
+
 .device iframe {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 20px;
+  border: none; 
 }
 
 #about-us {
