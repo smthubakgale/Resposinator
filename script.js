@@ -59,7 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
     deviceElement.style.height = `${deviceHeight}px`;
     deviceElement.innerHTML = `
       <h2>${device} (${orientation})</h2>
-      <iframe src="${url}" width="${deviceWidth}" height="${deviceHeight}"></iframe>
+      <div class="frame">
+         <iframe src="${url}" width="${deviceWidth}" height="${deviceHeight}"></iframe>
+      </div>
     `;
     deviceContainer.appendChild(deviceElement);
   }
