@@ -4,6 +4,26 @@ body {
   padding: 0;
 }
 
+/*----------*/
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.popup.fade-away {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+/*----------*/
+
 header {
   background-color: #333;
   color: #fff;
