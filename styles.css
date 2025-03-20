@@ -90,7 +90,7 @@ section {
 }
 
 #go-button , #copy-button , #encode-button {
-  width: 100px;
+  min-width: 100px;
   height: 30px;
   font-size: 18px;
   background-color: #4CAF50;
