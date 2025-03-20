@@ -4,6 +4,9 @@ body {
   padding: 0;
 }
 
+textarea {
+  margin-top: 5px;
+}
 /*----------*/
 .popup {
   position: fixed;
