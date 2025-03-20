@@ -86,7 +86,7 @@ section {
   padding: 10px;
 }
 
-#go-button , #copy-button {
+#go-button , #copy-button , #encode-button {
   width: 100px;
   height: 30px;
   font-size: 18px;
@@ -95,6 +95,8 @@ section {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top:5px;
+  text-align: centre; 
 }
 
 #device-container {
