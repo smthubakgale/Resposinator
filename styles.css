@@ -6,6 +6,7 @@ body {
 
 #encode-text {
   margin-top: 5px;
+  transform:translateY(10px)
 }
 /*----------*/
 .popup {
