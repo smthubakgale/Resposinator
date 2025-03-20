@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const deviceSelect = document.getElementById('device-select');
   const orientationSelect = document.getElementById('orientation-select');
   const goButton = document.getElementById('go-button');
+  const copyButton = document.getElementById('copy-button');
   const deviceContainer = document.getElementById('device-container');
   const aboutUsSection = document.getElementById('about-us');
   const aboutUsNav = document.getElementById('about-us-nav');
@@ -26,6 +27,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const orientation = orientationSelect.value;
     if (url && device && orientation) {
       renderDevice(url, device, orientation);
+    }
+  });
+  
+  copyButton.addEventListener('click', () => {
+    const url = urlInput.value.trim();
+    const device = deviceSelect.value;
+    const orientation = orientationSelect.value;
+  
+    if (url && device && orientation) {
+      const generatedUrl = `https://smthubakgale.github.io/Resposinator/?orientation=${orientation}&tevroc=true&url=${encodeURIComponent(url)}`;
+  
+      navigator.clipboard.writeText(generatedUrl)
+        .then(() => {
+          console.log('URL copied to clipboard');
+        })
+        .catch((error) => {
+          console.error('Failed to copy URL to clipboard:', error);
+        });
     }
   });
 
