@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   const urlInput = document.getElementById('url-input');
+  
   const encodeInput = document.getElementById('encode-text');
+  const btoaInput = document.getElementById('btoa-text');
+  const atobInput = document.getElementById('atob-text');
+  
   const deviceSelect = document.getElementById('device-select');
   const orientationSelect = document.getElementById('orientation-select');
   const goButton = document.getElementById('go-button');
@@ -37,6 +41,62 @@ document.addEventListener('DOMContentLoaded', function() {
     if (text) {
       
       navigator.clipboard.writeText(encodeURIComponent(text))
+        .then(() => {
+          console.log('URL copied to clipboard');
+  
+          // Show a quick popup
+          const popup = document.createElement('div');
+          popup.textContent = 'Copied to clipboard!';
+          popup.className = 'popup';
+          document.body.appendChild(popup);
+  
+          // Fade away the popup after 2 seconds
+          setTimeout(() => {
+            popup.classList.add('fade-away');
+            setTimeout(() => {
+              document.body.removeChild(popup);
+            }, 500); // wait for the fade animation to finish
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error('Failed to copy URL to clipboard:', error);
+        });
+    }
+  });
+
+  atobButton.addEventListener('click', () => {
+    const text = atobInput.value.trim(); 
+    if (text) {
+      
+      navigator.clipboard.writeText(atob(text))
+        .then(() => {
+          console.log('URL copied to clipboard');
+  
+          // Show a quick popup
+          const popup = document.createElement('div');
+          popup.textContent = 'Copied to clipboard!';
+          popup.className = 'popup';
+          document.body.appendChild(popup);
+  
+          // Fade away the popup after 2 seconds
+          setTimeout(() => {
+            popup.classList.add('fade-away');
+            setTimeout(() => {
+              document.body.removeChild(popup);
+            }, 500); // wait for the fade animation to finish
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error('Failed to copy URL to clipboard:', error);
+        });
+    }
+  });
+
+  btoaButton.addEventListener('click', () => {
+    const text = btoaInput.value.trim(); 
+    if (text) {
+      
+      navigator.clipboard.writeText(btoa(text))
         .then(() => {
           console.log('URL copied to clipboard');
   
