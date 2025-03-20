@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   const urlInput = document.getElementById('url-input');
+  const encodeInput = document.getElementById('encode-text');
   const deviceSelect = document.getElementById('device-select');
   const orientationSelect = document.getElementById('orientation-select');
   const goButton = document.getElementById('go-button');
   const copyButton = document.getElementById('copy-button');
+  const encodeButton = document.getElementById('encode-button');
   const deviceContainer = document.getElementById('device-container');
   const aboutUsSection = document.getElementById('about-us');
   const aboutUsNav = document.getElementById('about-us-nav');
@@ -27,6 +29,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const orientation = orientationSelect.value;
     if (url && device && orientation) {
       renderDevice(url, device, orientation);
+    }
+  });
+
+  encodeButton.addEventListener('click', () => {
+    const text = encodeInput.value.trim(); 
+    if (text) {
+      
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          console.log('URL copied to clipboard');
+  
+          // Show a quick popup
+          const popup = document.createElement('div');
+          popup.textContent = 'Copied to clipboard!';
+          popup.className = 'popup';
+          document.body.appendChild(popup);
+  
+          // Fade away the popup after 2 seconds
+          setTimeout(() => {
+            popup.classList.add('fade-away');
+            setTimeout(() => {
+              document.body.removeChild(popup);
+            }, 500); // wait for the fade animation to finish
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error('Failed to copy URL to clipboard:', error);
+        });
     }
   });
   
