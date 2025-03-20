@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const goButton = document.getElementById('go-button');
   const copyButton = document.getElementById('copy-button');
   const encodeButton = document.getElementById('encode-button');
+  const atobButton = document.getElementById('atob-button');
+  const btoaButton = document.getElementById('btoa-button');
   const deviceContainer = document.getElementById('device-container');
   const aboutUsSection = document.getElementById('about-us');
   const aboutUsNav = document.getElementById('about-us-nav');
