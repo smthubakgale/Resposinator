@@ -86,7 +86,7 @@ section {
   padding: 10px;
 }
 
-#go-button {
+#go-button , #copy-button {
   width: 100px;
   height: 30px;
   font-size: 18px;
