@@ -41,6 +41,20 @@ document.addEventListener('DOMContentLoaded', function() {
       navigator.clipboard.writeText(generatedUrl)
         .then(() => {
           console.log('URL copied to clipboard');
+  
+          // Show a quick popup
+          const popup = document.createElement('div');
+          popup.textContent = 'Copied to clipboard!';
+          popup.className = 'popup';
+          document.body.appendChild(popup);
+  
+          // Fade away the popup after 2 seconds
+          setTimeout(() => {
+            popup.classList.add('fade-away');
+            setTimeout(() => {
+              document.body.removeChild(popup);
+            }, 500); // wait for the fade animation to finish
+          }, 2000);
         })
         .catch((error) => {
           console.error('Failed to copy URL to clipboard:', error);
