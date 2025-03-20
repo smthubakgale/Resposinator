@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const text = encodeInput.value.trim(); 
     if (text) {
       
-      navigator.clipboard.writeText(text)
+      navigator.clipboard.writeText(encodeURIComponent(text))
         .then(() => {
           console.log('URL copied to clipboard');
   
