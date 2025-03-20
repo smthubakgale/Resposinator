@@ -19,10 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const queryParams = new URLSearchParams(window.location.search);
   const defaultUrl = queryParams.get('url') || '';
   const defaultOrientation = queryParams.get('orientation') || 'portrait';
+  const defaultDevice = queryParams.get('device') || 'iPhone 12';
   const hideAboutUs = queryParams.get('tevroc') !== null;
 
   urlInput.value = defaultUrl;
   orientationSelect.value = defaultOrientation;
+  deviceSelect.value = defaultDevice;
 
   if (hideAboutUs) {
     aboutUsSection.style.display = 'none';
@@ -128,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const orientation = orientationSelect.value;
   
     if (url && device && orientation) {
-      const generatedUrl = `https://smthubakgale.github.io/Resposinator/?orientation=${orientation}&tevroc=true&url=${encodeURIComponent(url)}`;
+      const generatedUrl = `https://smthubakgale.github.io/Resposinator/?orientation=${orientation}&device=${device}&tevroc=true&url=${encodeURIComponent(url)}`;
   
       navigator.clipboard.writeText(generatedUrl)
         .then(() => {
